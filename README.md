@@ -22,19 +22,19 @@ O projeto segue a seguinte estrutura:
 ```
 📂 projeto-mei
  ├── 📁 frontend (React + TypeScript)
- ├── 📁 backend (Laravel + PHP)
- ├── 📁 database (Configuração do MariaDB)
- ├── 📁 docker (Arquivos para containerização)
- ├── 📜 docker-compose.yml
+ │   ├── 📁 agendamento
+ │   ├── 📁 servico
+ │   ├── 📁 financeiro
  ├── 📜 README.md
 ```
+
+O backend e o banco de dados são gerenciados separadamente e não fazem parte deste repositório.
 
 ## 🛠 Como Rodar o Projeto
 ### Pré-requisitos
 Certifique-se de ter instalado em sua máquina:
 - **Docker e Docker Compose**
 - **Node.js e npm/yarn**
-- **Composer (para gerenciamento de dependências PHP)**
 
 ### Passos para execução
 1. Clone o repositório:
@@ -45,30 +45,12 @@ Certifique-se de ter instalado em sua máquina:
    ```sh
    cd projeto-mei
    ```
-3. Suba os containers com Docker Compose:
-   ```sh
-   docker-compose up -d
-   ```
-4. Instale as dependências do backend (Laravel):
-   ```sh
-   cd backend
-   composer install
-   ```
-5. Configure as variáveis de ambiente do Laravel (`.env`) e gere a chave da aplicação:
-   ```sh
-   cp .env.example .env
-   php artisan key:generate
-   ```
-6. Execute as migrações para criar as tabelas no banco de dados:
-   ```sh
-   php artisan migrate
-   ```
-7. Instale as dependências do frontend:
+3. Instale as dependências do frontend:
    ```sh
    cd frontend
    npm install
    ```
-8. Inicie o frontend:
+4. Inicie o frontend:
    ```sh
    npm run dev
    ```
